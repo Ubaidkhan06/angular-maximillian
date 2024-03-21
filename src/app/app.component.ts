@@ -1,10 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'first-project';
+  showRecipe = true;
+
+  onNavigate(event: string) {
+    console.log(event);
+    event == 'recipe' ? (this.showRecipe = true) : (this.showRecipe = false);
+  }
 }
